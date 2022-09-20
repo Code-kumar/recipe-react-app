@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Home from './views/Home';
+import FetchRecipe from './utlls/FetchRecipe';
 
-const App = () => (
-    <h2>Sweeite is sweet</h2>
-)
+const App = () => {
+    return(
+        <>
+            <Home />           
+        </>
+    )
+}
 
 export default App
