@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Home from './views/Home';
-import FetchRecipe from './utlls/FetchRecipe';
+import {Views} from "./views";
+import GlobalStyle from './styles/globalStyles';
 
 const App = () => {
     return(
         <>
-            <Home />           
+            <GlobalStyle />
+            <Views />           
         </>
     )
 }

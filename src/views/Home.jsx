@@ -1,23 +1,27 @@
-import { useState } from 'react';
-import FetchRecipe from '../utlls/FetchRecipe';
+import React from "react";
 import { Popular, Vaggie } from './';
 
 const Home = () =>{
-    const [timeoutId, setTimeoutId] = useState();
-
-    const onTextChange = (e) => {
-        e.preventDefault();
-        clearTimeout(timeoutId);
-        const timeout = setTimeout(() => FetchRecipe(e.target.value), 500);
-        setTimeoutId(timeout);
-    }
+    // const [recipe, setRecipe] = useState();
+    // const [timeoutId, setTimeoutId] = useState();
+    
+    // useEffect(() =>{
+    //     FetchRecipe()
+    //     .then((data) => setRecipe(data));
+    // }, []);
+    
+    // const onTextChange = (event) => {
+    //     clearTimeout(timeoutId);
+    //     // Debouncing
+    //     const timeout = setTimeout(() => FetchRecipe(event.target.value), 800);
+    //     setTimeoutId(timeout)
+    // }
 
     return(
-        <>
-            <h2>Homepage</h2>
-            <input type="text" onChange={onTextChange}/>
+        <> 
+            <input type="text" />
 
-            <Popular />
+            <Popular/>
             <Vaggie />
         </>
         
