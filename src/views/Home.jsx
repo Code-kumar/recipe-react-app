@@ -1,5 +1,6 @@
 import React from "react";
-import { Popular, Vaggie } from './';
+import { Popular, Vaggie, Category } from './';
+import {Header} from '../styles/main.styled';
 
 const Home = () =>{
     // const [recipe, setRecipe] = useState();
@@ -19,10 +20,8 @@ const Home = () =>{
 
     return(
         <> 
-            <input type="text" />
-
-            <Popular/>
             <Vaggie />
+            <Popular/>
         </>
         
     )

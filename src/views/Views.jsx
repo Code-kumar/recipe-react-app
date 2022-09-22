@@ -1,12 +1,16 @@
 import React from 'react';
-import {Home} from './';
+import {Home , Tasty, Searched} from '.';
+import { Route, Routes } from 'react-router-dom';
 
 const Views = () =>{
     return(
-        <div>
-            <h2>Hello</h2>
-            <Home />
-        </div>
+        <>  
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/tasty/:type" element={<Tasty />} />
+                <Route path="/searched/:search" element={<Searched />} />
+            </Routes>
+        </>
     )
 }
 

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
-import { Wrapper, Card, CardHeading, Gradient } from '../styles/main.styled'
+import { Wrapper, Card, CardHeading, Gradient, SectionHdr } from '../styles/main.styled'
 
 
 const Vaggie = () =>{
@@ -22,7 +22,7 @@ const Vaggie = () =>{
             setVaggie(JSON.parse(check));
         }
         else{
-            const res = await axios.get(`/api/recipes/v2?type=public&q=chicken&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}`)
+            const res = await axios.get(`/api/recipes/v2?type=public&q=random&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}&number=9&tag=vegetarian`)
             localStorage.setItem("vaggie", JSON.stringify(res.data.hits))
             console.log(res.data.hits)
             setVaggie(res.data.hits);
@@ -32,11 +32,11 @@ const Vaggie = () =>{
 
     return(
         <>
-        <h2>Our Vagetarian Picks</h2>
+        <SectionHdr>Our Vagetarian Picks</SectionHdr>
              <Wrapper>
                 <Splide options={{ 
                     perPage: 3,
-                    gap   : '5rem',
+                    gap   : '4rem',
                     arrow: false,
                     pagination: false,
                     drag: "free",

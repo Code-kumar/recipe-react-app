@@ -3,7 +3,7 @@ import axios from "axios";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 // import styled, {css} from "styled-components";
-import { Wrapper, Card, CardHeading, Gradient } from '../styles/main.styled'
+import { Wrapper, Card, CardHeading, Gradient, SectionHdr } from '../styles/main.styled'
 
 const Popular = () =>{
     const [recipes, setRecipes] = useState();
@@ -31,12 +31,12 @@ const Popular = () =>{
 
     return(
         <>
-        <h2>Popular page</h2>
+        <SectionHdr style={{ marginTop: '100px' }}>Popular page</SectionHdr>
             <Wrapper>
 
                 <Splide options={{ 
                     perPage: 4,
-                    gap   : '5rem',
+                    gap   : '3rem',
                     arrow: false,
                     pagination: false,
                     drag: "free",

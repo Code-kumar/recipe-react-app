@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
-import {Views} from "./views";
+import {Category, Search, Views} from "./views";
 import GlobalStyle from './styles/globalStyles';
-
+import { BrowserRouter } from 'react-router-dom';
+import { Header } from "./styles/main.styled";
 const App = () => {
     return(
-        <>
-            <GlobalStyle />
-            <Views />           
-        </>
+        <div className="App">
+            <BrowserRouter>
+                <GlobalStyle />
+                <Header>
+                    <Search />
+                    <Category />
+                </Header>
+                <Views />           
+            </BrowserRouter>
+        </div>
     )
 }
 
