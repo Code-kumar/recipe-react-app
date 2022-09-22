@@ -9,7 +9,6 @@ const Header = styled.div`
     align-items: center;
     margin: 50px 0;
     padding: 40px 0;
-    /* padding: 50px 0; */
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px #c3d2db;    
 `
@@ -90,7 +89,6 @@ const Container = styled.div`
 const CategoryList = styled.div`
     display: flex;
     justify-content: center;
-    /* margin: 50px 0; */
 `
 const SLink = styled(NavLink)`
     margin: 0 20px;
@@ -100,7 +98,6 @@ const SLink = styled(NavLink)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* padding: 15px; */
     border-radius: 50%;
     min-width: 100px;
     max-width: 100px;
