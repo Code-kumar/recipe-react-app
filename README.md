@@ -1,6 +1,6 @@
 # Recipe React App
 By: [Naveen](https://github.com/Code-kumar)
-DEMO: [Delicious](https://delicious.netlify.app/)
+DEMO: [Delicious](https://deliciouser.netlify.app/)
 
 Date: 9/19/2022
 
