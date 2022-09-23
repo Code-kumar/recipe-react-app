@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Card, Container, Gradient, CardHeading } from '../styles/main.styled';
 
@@ -24,13 +24,20 @@ const Searched = () =>{
     return(
         <>
         <h2 style={{ paddingLeft: '80px' }}>Results for: <span style={{ color: '#23CE6B' }}>{params.search}</span></h2>
-        <Container>
+        <Container
+            animate={{ opacity: 1 }}    
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+        >
             {searched && searched.map((item, index) =>{
                 return(
                     <Card key={index}>
-                        <img src={item.recipe.image} alt="" />
-                        <CardHeading>{item.recipe.label}</CardHeading>
-                        <Gradient />
+                        <Link to={"/recipe/" + item.recipe.label}>
+                            <img src={item.recipe.image} alt="" />
+                            <CardHeading>{item.recipe.label}</CardHeading>
+                            <Gradient />
+                        </Link>
                     </Card>
                 )
             })}

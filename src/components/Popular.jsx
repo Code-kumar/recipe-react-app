@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-// import styled, {css} from "styled-components";
 import { Wrapper, Card, CardHeading, Gradient, SectionHdr } from '../styles/main.styled'
+import { Link } from 'react-router-dom';
 
 const Popular = () =>{
     const [recipes, setRecipes] = useState();
@@ -23,7 +23,7 @@ const Popular = () =>{
         else{
             const res = await axios.get(`/api/recipes/v2?type=public&q=chicken&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}`)
             localStorage.setItem("getPopular", JSON.stringify(res.data.hits))
-            console.log(res.data.hits)
+            // console.log(res.data.hits)
             setRecipes(res.data.hits);
         }
 
@@ -40,15 +40,29 @@ const Popular = () =>{
                     arrow: false,
                     pagination: false,
                     drag: "free",
+                    breakpoints: {
+                        640: {
+                            perPage: 1,
+                            //   destroy: true,
+                        },
+                        767: {
+                            perPage: 2,
+                        },
+                        1092:{
+                            perPage: 3,
+                        }
+                    }
                  }}>
-                {recipes && recipes.map((recipe) =>{
+                {recipes && recipes.map((recipe, index) =>{
                     return(
-                        <SplideSlide key={recipe.recipe.label}>
+                        <SplideSlide key={index}>
                                 <CardHeading>{recipe.recipe.label}</CardHeading>
                             <Card>
-                                <img src={recipe.recipe.image} alt="" />
+                                <Link to={"/recipe/" + recipe.recipe.label}>
+                                    <img src={recipe.recipe.image} alt="" />
 
-                                <Gradient />
+                                    <Gradient />
+                                </Link>
                             </Card>
 
                         </SplideSlide>

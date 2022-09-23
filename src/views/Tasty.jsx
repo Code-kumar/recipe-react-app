@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Category from "../components/Category";
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import { Card, Container, Gradient, CardHeading } from '../styles/main.styled';
 
@@ -17,7 +14,6 @@ const Tasty = () =>{
     }
     
     useEffect(() =>{
-        console.log(params.type);
         getTasties(params.type);
     }, [params.type])
 
@@ -25,13 +21,20 @@ const Tasty = () =>{
     return(
         <>
             <h2 style={{ paddingLeft: '80px' }}>{params.type}'s Cuisine</h2>
-            <Container>
+            <Container 
+                animate={{ opacity: 1 }}    
+                initial={{ opacity: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+            >
                 {tasties && tasties.map((item, index) =>{
                     return(
                         <Card key={index}>
-                            <img src={item.recipe.image} alt="" />
-                            <CardHeading>{item.recipe.label}</CardHeading>
-                            <Gradient />
+                            <Link to={"/recipe/" + item.recipe.label}>
+                                <img src={item.recipe.image} alt="" />
+                                <CardHeading>{item.recipe.label}</CardHeading>
+                                <Gradient />
+                            </Link>
                         </Card>
                     )
                 })}

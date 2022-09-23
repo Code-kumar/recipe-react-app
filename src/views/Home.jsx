@@ -1,28 +1,19 @@
 import React from "react";
-import { Popular, Vaggie, Category } from './';
-import {Header} from '../styles/main.styled';
+import { Popular, Vaggie } from './';
+import {motion} from 'framer-motion';
 
 const Home = () =>{
-    // const [recipe, setRecipe] = useState();
-    // const [timeoutId, setTimeoutId] = useState();
-    
-    // useEffect(() =>{
-    //     FetchRecipe()
-    //     .then((data) => setRecipe(data));
-    // }, []);
-    
-    // const onTextChange = (event) => {
-    //     clearTimeout(timeoutId);
-    //     // Debouncing
-    //     const timeout = setTimeout(() => FetchRecipe(event.target.value), 800);
-    //     setTimeoutId(timeout)
-    // }
 
     return(
-        <> 
+        <motion.div 
+            animate={{ opacity: 1 }}    
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+        > 
             <Vaggie />
             <Popular/>
-        </>
+        </motion.div>
         
     )
 }

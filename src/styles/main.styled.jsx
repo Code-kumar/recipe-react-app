@@ -1,13 +1,32 @@
 
 import styled from "styled-components"
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { Link } from "react-router-dom"
 
+const Nav = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    
+`
+const Logo = styled(Link)`
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Lobster Two', cursive;
+    color:#272D2D;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+`
 const Header = styled.div`
     background: #f7fcff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px 0;
+    margin: 40px 0 50px 0;
     padding: 40px 0;
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px #c3d2db;    
@@ -38,6 +57,7 @@ const SearchBox = styled.input`
     border:none;
     min-width: 450px;
     max-width: 450px;
+    
 `
 const Wrapper = styled.div`
     /* margin: 2rem 0; */
@@ -54,7 +74,7 @@ const Gradient = styled.div`
 const CardHeading = styled.h3`
     color: #fff;
     font-weight: normal;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     z-index: 2;
     position: absolute;
     bottom: 20px;
@@ -72,14 +92,15 @@ const Card = styled.div`
     img{
         width: 100%;
         height: 100%;
+        float: left;
     }
     `
 const SectionHdr = styled.h2`
-    color: #004ca3;
+    color: #272D2D;
     margin: 20px 0;
     font-size: 1.2rem;
 `
-const Container = styled.div`
+const Container = styled(motion.div)`
     max-width: 992px;
     margin: 40px auto auto auto;
     display: grid;
@@ -121,6 +142,85 @@ const SLink = styled(NavLink)`
         font-size: 1rem;
     }
 `
+const LeftBlock = styled.div`
+    padding-right: 15px;
+    width: 50%;
+    
+    div{
+        position: sticky;
+        top: 10px;
+    }
+    `
+const RightBlock = styled.div`
+    background: #f7fcff;
+    padding: 15px;
+    width: 50%;
+    border: 1px solid #c5d4dd;
+    border-radius: 4px;
+`
+const DetailsWrapper = styled.div`
+    display: flex;
+
+    @media screen and (max-width: 767.98px) {
+        &{
+            flex-direction: column;
+        }
+        ${LeftBlock}{
+            margin-bottom: 15px;
+            padding: 0;
+        }
+        ${LeftBlock}, ${RightBlock}{
+            width: 100%;
+        }
+    }
+`
+
+const DetailBox = styled.div`
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #c5d4dd;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-transform: capitalize;
+
+    span{
+        font-size: .9rem;
+        color: #6e808a;
+        font-weight: 400;
+    }
+    p{
+        color: #272D2D;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+`
+const IngredientsList = styled.ul`
+    line-height: 30px;
+    padding: 0 20px;
+    
+    li{
+        margin: 5px 0;
+    }
+
+`
+const Tag = styled.button`
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 1px solid #23CE6B;
+    margin: 5px;
+    background: none;
+`
+
+
 export { 
     Wrapper, 
     Gradient, 
@@ -132,5 +232,13 @@ export {
     Container, 
     SLink,
     SearchBox,
-    SearchForm 
+    SearchForm,
+    RightBlock,
+    Tag,
+    IngredientsList,
+    DetailsWrapper,
+    LeftBlock,
+    DetailBox,
+    Logo, 
+    Nav
 };

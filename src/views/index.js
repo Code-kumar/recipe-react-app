@@ -6,3 +6,4 @@ export { default as Views } from './Views';
 export { default as Home } from './Home';
 export { default as Tasty } from './Tasty';
 export { default as Searched } from './Searched';
+export { default as Recipe } from './Recipe';
