@@ -11,7 +11,7 @@ const Searched = () =>{
     const params = useParams();
 
     const getSearched = async (query) =>{
-        const res = await axios.get(`/api/recipes/v2?type=public&q=${query}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}`)
+        const res = await axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}`)
         setSearched(res.data.hits);
     }
     
