@@ -9,7 +9,7 @@ const Tasty = () =>{
     const params = useParams();
 
     const getTasties = async (name) =>{
-        const res = await axios.get(`/api/recipes/v2?type=public&q=chicken&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}&cuisineType=${name}`)
+        const res = await axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}&cuisineType=${name}`)
         setTasties(res.data.hits);
     }
     

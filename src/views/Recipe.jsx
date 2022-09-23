@@ -12,7 +12,7 @@ const Recipe = () =>{
     const [details, setDetails] = useState([]);
 
     const getRecipeDetail = async () =>{
-        const data = await axios.get(`/api/recipes/v2?type=public&q=${params.name}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}`)
+        const data = await axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${params.name}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}`)
         setDetails([data.data.hits[0].recipe]);
     }
 

@@ -21,7 +21,7 @@ const Popular = () =>{
             setRecipes(JSON.parse(check));
         }
         else{
-            const res = await axios.get(`/api/recipes/v2?type=public&q=chicken&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}`)
+            const res = await axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KAY}`)
             localStorage.setItem("getPopular", JSON.stringify(res.data.hits))
             // console.log(res.data.hits)
             setRecipes(res.data.hits);
